@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="js/torpedo.js"></script>
+		<title>Wolfpack Tools - Torpedo</title>
+		<link rel="icon" href="img/favicon.png">
+		<style>
+			#footer {
+				bottom: 0px;
+				height: 50px;
+				width: 100%;
+				border: 1px solid yellow;
+				position: relative;
+			    border-color: #080808;
+				color: #999;
+				text-align: center;
+			}
+			.footer-bg {
+				background-color: #F8F9FB !important;
+				border-color: #F8F9FB !important;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="index.html">Wolfpack Tools</a>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link active" href="#">Torpedo calculator</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="navigation.html">Navigation tools</a>
+					</li>
+				</ul>
+				<span class="navbar-text">Warfay</span>
+			</div>
+		</nav>
+		<div class="container" style="padding-top: 100px">
+			<h1>Torpedo solution calculator</h1>
+			<p class="lead" style="font-size: 30px">Start by typing in the data</p>
+		</div>
+		<div class="container" style="padding-top: 50px">
+			<div class="card" style="width: 50rem">
+				<div class="card-body">
+					<h3 class="card-title">Target speed</h4>
+					<h6 class="card-subtitle mb-2 text-warning">You need to get the ship's length from the recognition manual!</h6>
+					<p class="card-text"><br>Make sure your u-boat has stopped. Then put your periscope's vertical line in front of the target ship and start your stopwatch by pressing <kbd>T</kbd> by default. Stop your stopwatch when the target ship has passed the periscope's vertical line and input the data below.</p>
+					<table style="width:100%">
+						<tr>
+							<td style="width:25%"><h6 class="card-text" style="text-align: center">Ship length (m)</h6></td>
+							<td style="width:25%"><h6 class="card-text" style="text-align: center">Stopwatch time (s)</h6></td>
+							<td style="width:50%"><h6 class="card-text" style="text-align: center">Target speed (kt)</h6></td>
+						</tr>
+						<tr>
+							<td style="width:25%"><input type="text" id="speedFirstValue"/></td>
+							<td style="width:25%"><input type="text" id="speedSecondValue"/></td>
+							<td style="width:50%"><input disabled="true" type="text" id="speedResultBox" style="width:100%"/></td>
+						</tr>
+					</table>
+					<br>
+					<button type="button" class="btn btn-primary" onclick="targetSpeed()">Calculate</button>
+					<button type="button" class="btn btn-danger" onclick="speedClear()">Clear</button>
+				</div>
+			</div>
+			<br>
+			<div class="card" style="width: 50rem">
+				<div class="card-body">
+					<h3 class="card-title">Target range</h4>
+					<h6 class="card-subtitle mb-2 text-warning">You need to get the ship's mast height from the recognition manual!</h6>
+					<p class="card-text"><br>Put your periscope's horizontal line on the target ship's waterline and count how many centiradians (horizontal lines) it takes to reach the highest point of the highest mast of the target ship.<br>You can use decimals.</p>
+					<table style="width:100%">
+						<tr>
+							<td style="width:25%"><h6 class="card-text" style="text-align: center">Mast height (m)</h6></td>
+							<td style="width:25%"><h6 class="card-text" style="text-align: center">Centiradians</h6></td>
+							<td style="width:50%"><h6 class="card-text" style="text-align: center">Range (hm)</h6></td>
+						</tr>
+						<tr>
+							<td style="width:25%"><input type="text" id="rangeFirstValue"/></td>
+							<td style="width:25%"><input type="text" id="rangeSecondValue"/></td>
+							<td style="width:50%"><input disabled="true" type="text" id="rangeResultBox" style="width:100%"/></td>
+						</tr>
+						<tr>
+							<td><h6 class="card-text" style="text-align: left"><br>Periscope zoom</h6></td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="rangeCheckbox"/></td>
+						</tr>
+					</table>
+					<br>
+					<button type="button" class="btn btn-primary" onclick="targetRange()">Calculate</button>
+					<button type="button" class="btn btn-danger" onclick="rangeClear()">Clear</button>
+				</div>
+			</div>
+			<br><br><br>
+		</div>
+		<div id="footer" class="footer-bg">   Made by Warfay 2019	</div>
+	</body>
+</html>
